@@ -8,24 +8,24 @@ import emailjs from "emailjs-com";
 
 
 const PortFolio = () => {
- const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  emailjs.sendForm(
-    'service_dre4prj',    
-    'template_seacm6n',   
-    e.target,             
-    'Ui4yptrO5_IXsV4wf'     
-  )
-  .then((result) => {
-    console.log('Email sent:', result.text);
-    alert('Message sent successfully!');
-    e.target.reset();     // optional: clears the form after sending
-  }, (error) => {
-    console.log('Error:', error.text);
-    alert('Failed to send message. Please check your EmailJS configuration.');
-  });
-};
+    emailjs.sendForm(
+      'service_dre4prj',
+      'template_seacm6n',
+      e.target,
+      'Ui4yptrO5_IXsV4wf'
+    )
+      .then((result) => {
+        console.log('Email sent:', result.text);
+        alert('Message sent successfully!');
+        e.target.reset();     // optional: clears the form after sending
+      }, (error) => {
+        console.log('Error:', error.text);
+        alert('Failed to send message. Please check your EmailJS configuration.');
+      });
+  };
 
 
   const images = [
@@ -460,6 +460,7 @@ const PortFolio = () => {
             <p className="text-white text-center">Looking for a developer who can create high-performance, interactive web experiences?</p>
           </div>
 
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-10 p-6">
 
             {/* right side content of lms project */}
@@ -493,7 +494,7 @@ const PortFolio = () => {
                 <div>
                   <label className="block text-white mb-1">Message</label>
                   <textarea
-                    rows="4"
+                    rows="8"
                     name="message"     // ✅ required
                     placeholder="Write your message..."
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -503,16 +504,17 @@ const PortFolio = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-500 text-blue-950 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition"
+                  className="w-full bg-blue-500 text-blue-950 py-2 mt-3 rounded-lg hover:bg-blue-700 hover:text-white transition"
                 >
                   Send Message
                 </button>
               </form>
 
 
-              <div className="grid grid-cols-3 gap-0 mt-4">
-                <p className="text-white text-[12px]">Contact: 03018578826</p>
+              <div className="grid grid-cols-3 gap-6 mt-5">
+                
                 <p className="text-white text-[12px]">Email: sairasiddique05@gmail.com</p>
+               
                 <div className=' flex flex-wrap text-sm space-x-5 pr-10' >
                   <a href="#" className='hover:text-[16px] hover:text-blue-200'>
                     <FaPhoneAlt className="text-white text-1xl hover:text-gray-400 hover:text-3xl transition" /></a>
@@ -532,7 +534,16 @@ const PortFolio = () => {
 
             {/* left side contact */}
             <div className="mt-6">
-              <img src="/c1.png" alt="contactUs" />
+              <div className="max-w-6xl mx-auto">
+                <iframe
+                  src="/saira_CV.pdf"
+                  width="100%"
+                  height="600px"
+                  title="CV"
+                  className="border rounded-lg"
+                ></iframe>
+              </div>
+              {/* <img src="/c1.png" alt="contactUs" /> */}
             </div>
 
 
